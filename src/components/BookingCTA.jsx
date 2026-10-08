@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { siteConfig } from '../data/siteConfig';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
@@ -9,47 +10,51 @@ export default function BookingCTA() {
       <div className="booking-section-bg">
         <img
           src="/images/consultation-lounge.jpg"
-          alt="KC Wellness consultation suite"
+          alt="KC Wellness consultation sanctuary in Southwick, MA"
           className="booking-bg-img"
         />
         <div className="booking-bg-overlay" />
       </div>
       <div className="container">
         <div className="booking-content animate-in">
-          <span className="eyebrow">Take the First Step</span>
-          <h2>Your Consultation Is Complimentary</h2>
+          <span className="eyebrow" style={{ color: 'var(--color-gold)' }}>
+            Take The First Step
+          </span>
+          <h2>Your Personal Consultation Is Complimentary</h2>
           <p>
-            Schedule a no-obligation consultation to discuss your goals, explore
-            treatment options, and create a personalized plan with{' '}
-            {siteConfig.name}.
+            Schedule a relaxed, no-obligation clinical evaluation with Nurse Practitioner
+            Ericka Blyther in Southwick, MA. Discuss your aesthetic and wellness priorities,
+            ask questions freely, and receive a customized treatment roadmap designed around your natural features.
           </p>
 
-          <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a
-              href={siteConfig.bookingUrl}
+          <div className="booking-actions">
+            <Link
+              to="/consultation"
               className="btn btn-white"
-              target="_blank"
-              rel="noopener noreferrer"
               id="booking-section-cta"
             >
-              {siteConfig.bookingCtaText}
-            </a>
+              <span>{siteConfig.bookingCtaText}</span>
+              <span className="btn-arrow">→</span>
+            </Link>
           </div>
 
           <div className="booking-details">
             <div className="booking-detail">
-              <strong>Phone</strong>
-              <a href={`tel:${siteConfig.phone.replace(/\D/g, '')}`} style={{ color: 'rgba(255,255,255,0.7)' }}>
+              <strong>Direct Phone</strong>
+              <a
+                href={`tel:${siteConfig.phoneClean}`}
+                style={{ color: 'rgba(255, 255, 255, 0.85)' }}
+              >
                 {siteConfig.phone}
               </a>
             </div>
             <div className="booking-detail">
-              <strong>Location</strong>
-              {siteConfig.address}, {siteConfig.city}, {siteConfig.state}
+              <strong>Southwick Clinic</strong>
+              <span>{siteConfig.address}, {siteConfig.city}, {siteConfig.state} {siteConfig.zip}</span>
             </div>
             <div className="booking-detail">
-              <strong>Note</strong>
-              {siteConfig.locationNote}
+              <strong>Region Served</strong>
+              <span>Western MA & Northern CT</span>
             </div>
           </div>
         </div>

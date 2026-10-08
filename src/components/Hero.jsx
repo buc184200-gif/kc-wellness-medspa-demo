@@ -1,90 +1,110 @@
-import { siteConfig } from '../data/siteConfig';
+import { Link } from 'react-router-dom';
+import { siteConfig, providers } from '../data/siteConfig';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function Hero({ onFindTreatment }) {
   const sectionRef = useScrollReveal();
+  const provider = providers[0];
 
   return (
     <section className="hero" ref={sectionRef}>
       <div className="hero-bg">
         <img
-          src="/images/hero-clinic.jpg"
-          alt="KC Wellness modern sanctuary"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            opacity: 0.24,
-            filter: 'saturate(0.85) brightness(0.8)',
-          }}
+          src="/images/hero-sanctuary.jpg"
+          alt="KC Wellness Medical Spa sanctuary in Southwick, MA"
+          className="hero-bg-img"
         />
       </div>
       <div className="hero-overlay" />
 
-      <div className="hero-content">
-        <div className="hero-text animate-in">
-          <div className="hero-eyebrow">{siteConfig.name}</div>
-          <h1 className="hero-title">{siteConfig.heroHeadline}</h1>
-          <p className="hero-subtitle">{siteConfig.heroSubheadline}</p>
-
-          <div className="hero-ctas">
-            <a
-              href={siteConfig.bookingUrl}
-              className="btn btn-white"
-              target="_blank"
-              rel="noopener noreferrer"
-              id="hero-book-cta"
-            >
-              {siteConfig.heroCta}
-            </a>
-            <button
-              className="btn btn-secondary-hero"
-              onClick={onFindTreatment}
-              id="hero-find-treatment-cta"
-            >
-              {siteConfig.heroCtaSecondary}
-            </button>
-          </div>
-
-          <div className="hero-trust">
-            <div className="hero-trust-item">
-              <span className="hero-trust-label">Provider</span>
-              <span className="hero-trust-value">Kelli Cossey, RN, BSN</span>
+      <div className="container hero-container">
+        <div className="hero-content-grid">
+          {/* Left Column: Editorial Headline & Actions — Always Visible Immediately */}
+          <div className="hero-text-block">
+            <div className="hero-location-badge">
+              <span className="hero-badge-dot">✦</span>
+              <span>Southwick, Massachusetts • NP-Led Medical Aesthetics</span>
             </div>
-            <div className="hero-trust-item">
-              <span className="hero-trust-label">Approach</span>
-              <span className="hero-trust-value">Natural Results</span>
-            </div>
-            <div className="hero-trust-item">
-              <span className="hero-trust-label">Location</span>
-              <span className="hero-trust-value">Oklahoma City</span>
-            </div>
-          </div>
-        </div>
 
-        <div className="hero-visual animate-in animate-in-delay-2">
-          <div className="hero-editorial-card">
-            <div className="hero-editorial-image-wrapper">
-              <img
-                src="/images/facial-contour.jpg"
-                alt="Natural aesthetic facial contours"
-                className="hero-editorial-img"
-              />
-              <div className="hero-editorial-badge">
-                <span>✦</span> Authentic Beauty
+            <h1 className="hero-title">
+              Personalized Aesthetics.
+              <span className="hero-title-italic"> Whole-Person Vitality.</span>
+            </h1>
+
+            <p className="hero-subtitle">
+              Board-certified Nurse Practitioner care led by{' '}
+              <strong>{provider.name}, {provider.credentials}</strong>. Delivering
+              advanced injectables, SkinPen microneedling, bioidentical hormone replacement
+              therapy, and medical weight loss with a &ldquo;less is more&rdquo; philosophy
+              that keeps you looking like you — only refreshed.
+            </p>
+
+            <div className="hero-ctas">
+              <Link
+                to="/consultation"
+                className="btn btn-primary-gold"
+                id="hero-book-cta"
+              >
+                <span>{siteConfig.heroCta}</span>
+                <span className="btn-arrow">→</span>
+              </Link>
+              <Link
+                to="/treatment-matcher"
+                className="btn btn-secondary-hero"
+                id="hero-find-treatment-cta"
+              >
+                <span>{siteConfig.heroCtaSecondary}</span>
+                <span className="btn-arrow">↗</span>
+              </Link>
+            </div>
+
+            <div className="hero-trust-bar">
+              <div className="hero-trust-item">
+                <span className="hero-trust-label">Clinical Director</span>
+                <span className="hero-trust-value">Ericka Blyther, MSN, APRN</span>
+              </div>
+              <div className="hero-trust-divider" />
+              <div className="hero-trust-item">
+                <span className="hero-trust-label">Philosophy</span>
+                <span className="hero-trust-value">Natural & Undetectable</span>
+              </div>
+              <div className="hero-trust-divider" />
+              <div className="hero-trust-item">
+                <span className="hero-trust-label">Facility</span>
+                <span className="hero-trust-value">208 College Hwy, Southwick</span>
               </div>
             </div>
-            <div className="hero-editorial-body">
-              <span className="hero-editorial-tag">The KC Philosophy</span>
-              <h3 className="hero-editorial-title">"Less Is More. Natural Is Everything."</h3>
-              <p className="hero-editorial-desc">
-                Precision medical aesthetics paired with whole-person naturopathic principles for balanced, undetectable results.
-              </p>
-              <div className="hero-editorial-treatments">
-                <span className="hero-pill">Botox & Fillers</span>
-                <span className="hero-pill">SkinPen</span>
-                <span className="hero-pill">BBL Laser</span>
-                <span className="hero-pill">Lipotropic Wellness</span>
+          </div>
+
+          {/* Right Column: Editorial Visual Showcase */}
+          <div className="hero-visual-block animate-in animate-in-delay-2">
+            <div className="hero-editorial-card">
+              <div className="hero-editorial-image-frame">
+                <img
+                  src="/images/hero-portrait.jpg"
+                  alt="Subtle, authentic medical aesthetics results by KC Wellness"
+                  className="hero-editorial-img"
+                />
+                <div className="hero-editorial-tag-floating">
+                  <span className="gold-star">✦</span>
+                  <span>The KC Natural Standard</span>
+                </div>
+              </div>
+
+              <div className="hero-editorial-caption">
+                <div className="hero-caption-quote">
+                  &ldquo;Less is more. Your results should honor your authentic facial anatomy.&rdquo;
+                </div>
+                <div className="hero-caption-author">
+                  — Ericka Blyther, MSN, APRN • Founder
+                </div>
+                <div className="hero-pill-cluster">
+                  <span className="hero-pill">Botox & Neurotoxins</span>
+                  <span className="hero-pill">Dermal Fillers</span>
+                  <span className="hero-pill">SkinPen</span>
+                  <span className="hero-pill">BHRT</span>
+                  <span className="hero-pill">Weight Loss</span>
+                </div>
               </div>
             </div>
           </div>

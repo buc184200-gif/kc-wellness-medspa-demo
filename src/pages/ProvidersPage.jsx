@@ -1,30 +1,33 @@
 import { useEffect } from 'react';
 import ProviderSection from '../components/ProviderSection';
 import BookingCTA from '../components/BookingCTA';
+import { siteConfig } from '../data/siteConfig';
 
 export default function ProvidersPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = 'Providers | KC Wellness';
+    document.title = 'Meet Ericka Blyther | KC Wellness';
   }, []);
 
   return (
     <>
-      <section className="treatment-detail-hero">
+      <section className="page-hero">
         <div className="container">
           <span className="eyebrow" style={{ color: 'var(--color-gold)' }}>
-            Your Provider
+            Clinical Leadership
           </span>
-          <h1>Meet the Team Behind Your Results</h1>
+          <h1>Meet Ericka Blyther, MSN, APRN</h1>
           <p
             style={{
-              color: 'rgba(255,255,255,0.7)',
-              marginTop: '1rem',
-              maxWidth: '600px',
+              color: 'rgba(255, 255, 255, 0.85)',
+              marginTop: '0.75rem',
+              maxWidth: '640px',
+              lineHeight: '1.75',
             }}
           >
-            Every treatment at KC Wellness is performed by a licensed, credentialed
-            medical professional committed to natural-looking results.
+            Founder, Nurse Practitioner & Medical Director of KC Wellness Medical Spa
+            in Southwick, MA. Uncompromising standards of clinical excellence paired with a
+            natural, &ldquo;less is more&rdquo; aesthetic philosophy.
           </p>
         </div>
       </section>

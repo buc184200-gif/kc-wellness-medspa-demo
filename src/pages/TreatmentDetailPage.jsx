@@ -254,15 +254,13 @@ export default function TreatmentDetailPage() {
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
-                <a
-                  href={siteConfig.bookingUrl}
+                <Link
+                  to="/consultation"
                   className="btn btn-primary"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   id={`treatment-detail-book-${treatment.id}`}
                 >
                   {siteConfig.bookingCtaText}
-                </a>
+                </Link>
                 <a
                   href={`tel:${siteConfig.phone.replace(/\D/g, '')}`}
                   className="btn btn-secondary"

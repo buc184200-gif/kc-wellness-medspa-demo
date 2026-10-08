@@ -17,24 +17,28 @@ export default function ResultsGallery({ isPage = false }) {
     return t ? t.slug : treatmentId;
   };
 
+  const displayResults = isPage ? filtered : filtered.slice(0, 3);
+
   return (
     <section
       className={`section ${isPage ? '' : 'section-beige'}`}
       ref={sectionRef}
-      id="results-section"
+      id="results"
     >
       <div className="container">
-        <div className="section-header animate-in">
-          <span className="eyebrow">Smart Proof System</span>
-          <h2>Clinical Results & What to Expect</h2>
-          <p>
-            Evidence-based decision support for your aesthetic journey. We pair
-            transparent clinical expectations with approved patient timelines — with
-            zero fabricated imagery or empty &ldquo;Coming Soon&rdquo; placeholders.
-          </p>
-        </div>
+        {!isPage && (
+          <div className="section-header animate-in">
+            <span className="eyebrow">Patient Results Standard</span>
+            <h2>Clinical Results & What to Expect</h2>
+            <p>
+              Transparent clinical expectations, realistic healing windows, and provider
+              guidance curated by Nurse Practitioner Ericka Blyther — with zero fabricated
+              transformations or empty placeholders.
+            </p>
+          </div>
+        )}
 
-        {/* Architecture Notice — directly solving the Ericka proof challenge */}
+        {/* Clinical Transparency Banner */}
         <div
           className="proof-architecture-banner animate-in"
           style={{
@@ -70,7 +74,7 @@ export default function ResultsGallery({ isPage = false }) {
                 fontWeight: 600,
               }}
             >
-              Crestiva Clinical Proof Standard
+              KC Wellness Results Standard
             </h4>
             <p
               style={{
@@ -80,10 +84,9 @@ export default function ResultsGallery({ isPage = false }) {
                 margin: 0,
               }}
             >
-              In accordance with medical aesthetics best practices, patient photography
-              is only displayed with verified consent (State A). When photography is
-              pending, our proprietary decision-support guides (State B) provide
-              actionable recovery and outcome timelines so clients never hit a dead end.
+              Patient photography is displayed only where approved. When treatment photography
+              is not yet available, we provide verified patient feedback, treatment expectations,
+              and provider guidance instead of empty placeholders.
             </p>
           </div>
         </div>
@@ -104,7 +107,7 @@ export default function ResultsGallery({ isPage = false }) {
         </div>
 
         <div className="results-grid">
-          {filtered.map((result, i) => {
+          {displayResults.map((result, i) => {
             const slug = getTreatmentSlug(result.treatmentId);
 
             if (result.hasApprovedPhotos) {
@@ -268,15 +271,13 @@ export default function ResultsGallery({ isPage = false }) {
                     >
                       Explore Treatment
                     </Link>
-                    <a
-                      href={siteConfig.bookingUrl}
+                    <Link
+                      to="/consultation"
                       className="btn btn-primary"
                       style={{ fontSize: '0.72rem', padding: '0.7rem 1.2rem' }}
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       {siteConfig.bookingCtaShort}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               );
@@ -367,15 +368,13 @@ export default function ResultsGallery({ isPage = false }) {
                   >
                     View Treatment
                   </Link>
-                  <a
-                    href={siteConfig.bookingUrl}
+                  <Link
+                    to="/consultation"
                     className="btn btn-primary"
                     style={{ fontSize: '0.72rem', padding: '0.7rem 1.2rem' }}
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     {siteConfig.bookingCtaShort}
-                  </a>
+                  </Link>
                 </div>
               </div>
             );
@@ -384,11 +383,12 @@ export default function ResultsGallery({ isPage = false }) {
 
         {!isPage && (
           <div
-            style={{ textAlign: 'center', marginTop: 'var(--space-2xl)' }}
+            style={{ textAlign: 'center', marginTop: 'var(--space-3xl)' }}
             className="animate-in"
           >
             <Link to="/results" className="btn btn-secondary">
-              View All Treatment Expectation Guides →
+              <span>Explore All Results &amp; What to Expect</span>
+              <span className="btn-arrow">→</span>
             </Link>
           </div>
         )}

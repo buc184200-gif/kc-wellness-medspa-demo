@@ -2,81 +2,112 @@ import { Link } from 'react-router-dom';
 import { siteConfig } from '../data/siteConfig';
 
 export default function Footer() {
+  const handleOpenCookiePreferences = (e) => {
+    e.preventDefault();
+    window.dispatchEvent(new CustomEvent('openCookiePreferences'));
+  };
+
   return (
     <footer className="footer" role="contentinfo">
       <div className="container">
         <div className="footer-inner">
+          {/* Brand info */}
           <div className="footer-brand">
-            <div className="footer-logo">{siteConfig.name}</div>
-            <p>
-              {siteConfig.tagline}. Personalized aesthetic treatments and
-              whole-person wellness by Kelli Cossey, RN, BSN.
+            <div className="footer-logo">{siteConfig.shortName}</div>
+            <p className="footer-tagline">
+              {siteConfig.tagline}. Expert medical aesthetics, bioidentical hormone
+              replacement therapy, and physician-guided weight loss led by Ericka Blyther, MSN, APRN.
             </p>
-            <div style={{ marginTop: '1rem', display: 'flex', gap: '1rem' }}>
+            <div className="footer-socials">
               <a
                 href={siteConfig.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                style={{ fontSize: '0.85rem' }}
+                className="footer-social-link"
               >
-                Instagram
+                Instagram ↗
               </a>
               <a
                 href={siteConfig.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                style={{ fontSize: '0.85rem' }}
+                className="footer-social-link"
               >
-                Facebook
+                Facebook ↗
               </a>
             </div>
           </div>
 
+          {/* Treatments list */}
           <div className="footer-col">
-            <h4>Treatments</h4>
-            <Link to="/treatments/botox-dysport">Botox & Dysport</Link>
+            <h4>Clinical Treatments</h4>
+            <Link to="/treatments/botox-dysport">Botox & Neurotoxins</Link>
             <Link to="/treatments/dermal-fillers">Dermal Fillers</Link>
-            <Link to="/treatments/microneedling">Microneedling</Link>
-            <Link to="/treatments/laser-treatments">BBL & Moxi Laser</Link>
-            <Link to="/treatments/iv-therapy">IV Therapy</Link>
+            <Link to="/treatments/sculptra">Sculptra Biostimulator</Link>
+            <Link to="/treatments/microneedling">SkinPen Microneedling</Link>
+            <Link to="/treatments/weight-loss">Medical Weight Loss</Link>
+            <Link to="/treatments/hormone-therapy">Hormone Therapy (BHRT)</Link>
+            <Link to="/treatments/iv-therapy">IV Hydration Lounge</Link>
           </div>
 
+          {/* Explore navigation */}
           <div className="footer-col">
-            <h4>Explore</h4>
+            <h4>Explore &amp; Proof</h4>
             <Link to="/treatments">All Treatments</Link>
-            <Link to="/results">Results</Link>
-            <Link to="/providers">Providers</Link>
-            <Link to="/about">About</Link>
+            <Link to="/concerns">Shop by Concern</Link>
+            <Link to="/results">Results &amp; Proof</Link>
+            <Link to="/reviews">Patient Reviews</Link>
+            <Link to="/provider">Meet Your Provider</Link>
+            <Link to="/about">About Our Clinic</Link>
+            <Link to="/faq">Frequently Asked Questions</Link>
+            <Link to="/treatment-matcher">Treatment Matcher</Link>
+            <Link to="/consultation">Book Consultation</Link>
           </div>
 
-          <div className="footer-col">
-            <h4>Contact</h4>
-            <a href={`tel:${siteConfig.phone.replace(/\D/g, '')}`}>
+          {/* Contact Details */}
+          <div className="footer-col footer-contact-col">
+            <h4>Clinic & Contact</h4>
+            <a href={`tel:${siteConfig.phoneClean}`} className="footer-phone">
               {siteConfig.phone}
             </a>
-            <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-            <span style={{ display: 'block', marginBottom: '0.6rem', fontSize: '0.88rem' }}>
+            <a href={`mailto:${siteConfig.email}`} className="footer-email">
+              {siteConfig.email}
+            </a>
+            <address className="footer-address">
               {siteConfig.address}
               <br />
               {siteConfig.city}, {siteConfig.state} {siteConfig.zip}
-            </span>
-            <span style={{ display: 'block', fontSize: '0.82rem', fontStyle: 'italic' }}>
+            </address>
+            <div className="footer-hours">
+              {siteConfig.hoursNote}
+            </div>
+            <div className="footer-area-tag">
               {siteConfig.locationNote}
-            </span>
+            </div>
           </div>
         </div>
 
+        {/* Footer bottom legal row */}
         <div className="footer-bottom">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
           </p>
-          <div className="footer-bottom-crestiva">
-            Website by{' '}
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              Crestiva Web Studio
-            </a>
+          <div className="footer-legal-links">
+            <Link to="/privacy">Privacy Policy</Link>
+            <span className="footer-sep">•</span>
+            <Link to="/terms">Terms of Use</Link>
+            <span className="footer-sep">•</span>
+            <button
+              onClick={handleOpenCookiePreferences}
+              className="footer-cookie-btn"
+            >
+              Cookie Preferences
+            </button>
+          </div>
+          <div className="footer-bottom-tagline">
+            Southwick, Massachusetts • Medical Aesthetic & Wellness Practice
           </div>
         </div>
       </div>

@@ -1,45 +1,65 @@
 // ============================================================
-// SITE CONFIG — KC WELLNESS PERSONALIZATION (20% layer)
-// Swap this file to rebrand for a new Med Spa prospect.
+// SITE CONFIG — KC WELLNESS MEDICAL SPA (SOUTHWICK, MA)
+// Official Provider: Ericka Blyther, MSN, APRN
+// Official Website: https://www.kcwellnessmedicalspa.com/
 // ============================================================
 
 export const siteConfig = {
   // ---- Brand ----
-  name: 'KC Wellness',
-  tagline: 'A Top Medical Spa in Oklahoma City',
-  heroHeadline: 'Personalized Aesthetics.\nWhole-Person Wellness.',
+  name: 'KC Wellness Medical Spa',
+  shortName: 'KC Wellness',
+  tagline: 'Premier Medical Aesthetics & Whole-Person Vitality in Southwick, MA',
+  heroHeadline: 'Personalized Aesthetics.\nWhole-Person Vitality.',
   heroSubheadline:
-    'Expert-led treatments designed to enhance your natural beauty — with a "less is more" philosophy that keeps results looking like you, only refreshed.',
+    'Board-certified Nurse Practitioner care in Southwick, MA. Expert-led neurotoxins, dermal fillers, SkinPen microneedling, bioidentical hormone replacement therapy (BHRT), and medically supervised weight loss — with a "less is more" philosophy that keeps results looking like you, only refreshed.',
   heroCta: 'Book Complimentary Consultation',
   heroCtaSecondary: 'Find My Treatment',
 
-  // ---- Contact / Location (Verified) ----
-  phone: '(405) 704-6673',
-  email: 'kelli@kcwellness.life',
-  address: '13820 Wireless Way',
-  city: 'Oklahoma City',
-  state: 'OK',
-  zip: '73134',
-  locationNote: 'Located inside Refined OKC',
-  website: 'https://www.kcwellnessokc.com',
-  instagram: 'https://www.instagram.com/kcwellnessokc/',
-  facebook: 'https://www.facebook.com/profile.php?id=61586372644487',
+  // ---- Contact / Location (Verified Southwick, MA) ----
+  phone: '(413) 310-0484',
+  phoneClean: '4133100484',
+  email: 'Kcwellnessspa@gmail.com',
+  address: '208 College Highway, #G1',
+  city: 'Southwick',
+  state: 'MA',
+  zip: '01077',
+  locationNote: 'Serving Western MA & Northern CT (Westfield, Agawam, Springfield, Simsbury, Granby)',
+  hoursNote: 'Mon–Fri: 9:00 AM – 6:00 PM | Sat: 9:00 AM – 4:00 PM (By Appointment Only)',
+  website: 'https://www.kcwellnessmedicalspa.com',
+  instagram: 'https://www.instagram.com/kcwellnessmedspa',
+  facebook: 'https://www.facebook.com/kcwellnessmedicalspa',
 
   // ---- Consultation terminology ----
   consultationLabel: 'Complimentary Consultation',
   bookingCtaText: 'Book Complimentary Consultation',
   bookingCtaShort: 'Book Consultation',
 
-  // ---- External booking ----
-  bookingUrl: 'https://www.kcwellnessokc.com', // fallback to their site
+  // ---- Booking Route (Internal Demo Experience) ----
+  bookingUrl: '/consultation',
 
   // ---- Navigation ----
   navLinks: [
-    { label: 'Treatments', href: '/treatments' },
-    { label: 'Concerns', href: '/#concerns' },
+    {
+      label: 'Treatments',
+      href: '/treatments',
+      children: [
+        { label: 'All Treatments', href: '/treatments' },
+        { label: 'Botox / Neurotoxins', href: '/treatments/botox-dysport' },
+        { label: 'Dermal Fillers', href: '/treatments/dermal-fillers' },
+        { label: 'Microneedling', href: '/treatments/microneedling' },
+        { label: 'Weight Loss', href: '/treatments/weight-loss' },
+        { label: 'Hormone Replacement Therapy', href: '/treatments/hormone-therapy' },
+        { label: 'IV Therapy', href: '/treatments/iv-therapy' },
+        { label: 'B12 / Vitamin Injections', href: '/treatments/wellness-shots' },
+        { label: 'Medical Aesthetics', href: '/treatments' },
+      ],
+    },
+    { label: 'Concerns', href: '/concerns' },
     { label: 'Results', href: '/results' },
-    { label: 'Providers', href: '/providers' },
+    { label: 'Reviews', href: '/reviews' },
+    { label: 'Provider', href: '/provider' },
     { label: 'About', href: '/about' },
+    { label: 'FAQ', href: '/faq' },
   ],
 };
 
@@ -49,20 +69,22 @@ export const siteConfig = {
 
 export const providers = [
   {
-    id: 'kelli-cossey',
-    name: 'Kelli Cossey',
-    credentials: 'RN, BSN',
-    role: 'Owner & Nurse Injector',
+    id: 'ericka-blyther',
+    name: 'Ericka Blyther',
+    credentials: 'MSN, APRN',
+    role: 'Founder, Nurse Practitioner & Medical Director',
     philosophy:
-      'Kelli believes in a "less is more" approach — delivering natural, undetectable enhancements that let your authentic beauty shine through. She combines advanced medical aesthetics with a holistic, whole-person perspective.',
+      'Ericka believes in a "less is more" approach — delivering natural, undetectable enhancements that honor your unique facial harmony. Combining clinical precision with whole-person wellness, she tailors every protocol to each patient\'s unique biology, goals, and lifestyle.',
     specialties: [
-      'Botox & Dysport',
-      'Dermal Fillers',
-      'Sculptra',
+      'Botox & Neurotoxins (Daxxify, Dysport)',
+      'Dermal Fillers & Lip Balancing',
       'SkinPen Microneedling',
+      'Bioidentical Hormone Replacement Therapy (BHRT)',
+      'Medically Supervised Weight Loss (Semaglutide / Tirzepatide / Lipo-MICC)',
+      'IV Hydration Therapy & Vitamin Injections',
     ],
-    education: 'Continuing education in Naturopathic Medicine',
-    // Photo not verified — using placeholder
+    education:
+      'Master of Science in Nursing (MSN) • Advanced Practice Registered Nurse (APRN) • Clinical background in pediatric, adolescent, and NICU medicine',
     photo: null,
     verified: true,
   },
@@ -76,49 +98,50 @@ export const concerns = [
   {
     id: 'fine-lines',
     label: 'Fine Lines & Wrinkles',
-    shortDesc: 'Smooth expression lines and restore a refreshed appearance.',
+    shortDesc: 'Smooth dynamic expression lines and restore a relaxed, youthful look.',
     icon: '✦',
-    relatedTreatments: ['botox-dysport', 'fillers'],
+    image: '/images/botox-treatment.jpg',
+    relatedTreatments: ['botox-dysport', 'fillers', 'sculptra'],
   },
   {
     id: 'skin-texture',
-    label: 'Skin Texture & Scarring',
-    shortDesc:
-      'Improve uneven texture, acne scarring, and overall skin quality.',
+    label: 'Skin Texture & Acne Scars',
+    shortDesc: 'Stimulate deep collagen remodeling to smooth texture, pore size, and scarring.',
     icon: '◈',
+    image: '/images/skin-texture.jpg',
     relatedTreatments: ['microneedling', 'laser-treatments'],
   },
   {
     id: 'volume-loss',
-    label: 'Volume Loss',
-    shortDesc:
-      'Restore youthful contours to the cheeks, lips, jawline, and temples.',
+    label: 'Volume Loss & Contours',
+    shortDesc: 'Restore youthful structural contours to cheeks, lips, temples, and jawline.',
     icon: '◉',
+    image: '/images/facial-contour.jpg',
     relatedTreatments: ['fillers', 'sculptra'],
   },
   {
     id: 'pigmentation',
-    label: 'Pigmentation & Tone',
-    shortDesc:
-      'Address sun damage, dark spots, and uneven skin tone for a brighter complexion.',
+    label: 'Pigmentation & Sun Damage',
+    shortDesc: 'Clear stubborn sun damage, dark spots, and redness for an even complexion.',
     icon: '❋',
+    image: '/images/laser-skin-treatment.jpg',
     relatedTreatments: ['laser-treatments', 'microneedling'],
   },
   {
     id: 'weight-management',
-    label: 'Weight Management',
-    shortDesc:
-      'Targeted lipotropic support and cellular metabolism optimization for healthy body composition.',
+    label: 'Medical Weight Loss',
+    shortDesc: 'Physician-formulated metabolic optimization, GLP-1 therapy, and Lipo-MICC protocols.',
     icon: '✤',
+    image: '/images/weight-loss-treatment.jpg',
     relatedTreatments: ['weight-loss', 'iv-therapy'],
   },
   {
     id: 'wellness',
-    label: 'Energy & Wellness',
-    shortDesc:
-      'Support whole-body vitality with IV therapy, NAD+, and wellness treatments.',
+    label: 'Hormones & Cellular Energy',
+    shortDesc: 'Restore vitality, mental clarity, and restful sleep with bioidentical HRT and IV drips.',
     icon: '❂',
-    relatedTreatments: ['iv-therapy', 'wellness-shots', 'weight-loss'],
+    image: '/images/wellness.jpg',
+    relatedTreatments: ['hormone-therapy', 'iv-therapy', 'wellness-shots'],
   },
 ];
 
@@ -132,235 +155,211 @@ export const treatments = [
     slug: 'botox-dysport',
     name: 'Botox & Dysport',
     category: 'Injectables',
-    tagline: 'Soften expression lines. Keep your natural movement.',
+    tagline: 'Soften expression lines. Preserve your natural movement.',
     shortDesc:
-      'Neuromodulators that gently relax targeted facial muscles to smooth fine lines and wrinkles — with results that look natural, never frozen.',
+      'FDA-approved neuromodulators precisely placed by Nurse Practitioner Ericka Blyther to relax targeted expression muscles — delivering a naturally rested, refreshed look without frozen expressions.',
     whatItHelps: [
-      'Forehead lines',
-      "Crow's feet",
-      'Frown lines (11s)',
-      'Brow lift',
+      'Forehead horizontal lines',
+      "Crow's feet around eyes",
+      'Frown lines (11s between brows)',
+      'Subtle brow elevation',
+      'Masseter jawline slimming',
     ],
     whoItsFor:
-      'Clients looking to soften dynamic wrinkles while maintaining natural facial expression.',
+      'Patients seeking to smooth dynamic facial lines while maintaining full natural expression and facial emotion.',
     overview:
-      'Botox and Dysport are FDA-approved neuromodulators that temporarily relax specific facial muscles responsible for expression lines. Treatments typically take 15–30 minutes with minimal downtime.',
-    provider: 'kelli-cossey',
+      'Botox and Dysport temporarily soften muscle contractions that cause repetitive skin creasing. Ericka Blyther employs advanced micro-dosing techniques ensuring your natural expressions remain untouched while lines soften smoothly over 10–14 days.',
+    provider: 'ericka-blyther',
     concernIds: ['fine-lines'],
     featured: true,
-    image: '/images/injectables.jpg',
+    image: '/images/botox-treatment.jpg',
   },
   {
     id: 'fillers',
     slug: 'dermal-fillers',
     name: 'Dermal Fillers',
     category: 'Injectables',
-    tagline: 'Restore volume. Enhance contours. Naturally.',
+    tagline: 'Restore volume. Enhance contours. Undetectably.',
     shortDesc:
-      'Hyaluronic acid-based fillers designed to restore lost volume, enhance facial contours, and achieve a refreshed, balanced appearance.',
+      'Premium hyaluronic acid fillers tailored to restore lost facial volume, enhance lip definition, and sculpt balanced structural contours with artistic restraint.',
     whatItHelps: [
-      'Cheek volume',
-      'Lip enhancement',
-      'Jawline contouring',
-      'Under-eye hollows',
-      'Nasolabial folds',
+      'Cheek contour and midface lift',
+      'Natural lip hydration and definition',
+      'Jawline and chin refinement',
+      'Under-eye tear trough smoothing',
+      'Nasolabial and marionette lines',
     ],
     whoItsFor:
-      'Clients experiencing age-related volume loss or seeking subtle facial enhancement.',
+      'Individuals experiencing age-related volume depletion or looking for subtle, harmonious facial balance.',
     overview:
-      'Dermal fillers use biocompatible hyaluronic acid to restore volume and smooth deeper lines. Results are immediate and can last 6–18 months depending on the treatment area and product used.',
-    provider: 'kelli-cossey',
+      'Hyaluronic acid dermal fillers gently re-establish structural support and smooth deep shadows. Administered with a medical artist\'s eye, results appear immediately and settle into an undetectable, natural enhancement lasting 6 to 18 months.',
+    provider: 'ericka-blyther',
     concernIds: ['volume-loss', 'fine-lines'],
     featured: true,
-    image: '/images/facial-contour.jpg',
+    image: '/images/fillers-treatment.jpg',
   },
   {
     id: 'sculptra',
     slug: 'sculptra',
-    name: 'Sculptra',
+    name: 'Sculptra Aesthetic',
     category: 'Injectables',
-    tagline: 'Stimulate your own collagen. Gradual, lasting results.',
+    tagline: 'Stimulate your own collagen. Gradual, lasting renewal.',
     shortDesc:
-      'A biostimulator that works with your body to gradually rebuild collagen, restoring facial volume over time for natural-looking, long-lasting improvement.',
+      'A biocompatible poly-L-lactic acid (PLLA) biostimulator that triggers your body\'s natural collagen synthesis to restore deep facial volume and improve skin elasticity over time.',
     whatItHelps: [
-      'Deep facial folds',
-      'Overall facial volume loss',
-      'Skin laxity',
+      'Deep facial folds and hollows',
+      'Mid-face volume depletion',
       'Temple hollowing',
+      'Crepey skin laxity',
     ],
     whoItsFor:
-      'Clients looking for gradual, long-lasting facial rejuvenation through collagen stimulation.',
+      'Clients desiring a discreet, progressive rejuvenation that rebuilds youthful collagen foundation over several months with results lasting up to two years.',
     overview:
-      'Sculptra is an injectable poly-L-lactic acid (PLLA) biostimulator that helps your body rebuild its own natural collagen. Results develop gradually over several months and can last up to two years.',
-    provider: 'kelli-cossey',
-    concernIds: ['volume-loss'],
-    featured: false,
-    image: '/images/facial-contour.jpg',
+      'Unlike conventional fillers that provide instant gel volume, Sculptra works biochemically within the deep dermis to regenerate your own collagen matrix. Improvements unfold naturally over 8–12 weeks.',
+    provider: 'ericka-blyther',
+    concernIds: ['volume-loss', 'fine-lines'],
+    featured: true,
+    image: '/images/sculptra-treatment.jpg',
   },
   {
     id: 'microneedling',
     slug: 'microneedling',
     name: 'SkinPen Microneedling',
     category: 'Skin Rejuvenation',
-    tagline: 'Stimulate renewal. Reveal smoother skin.',
+    tagline: 'Stimulate cellular renewal. Reveal refined, luminous skin.',
     shortDesc:
-      'FDA-cleared microneedling that creates controlled micro-injuries to stimulate your skin\'s natural healing response, improving texture, tone, and scarring.',
+      'The only FDA-cleared microneedling device, creating precise micro-channels that trigger the body\'s natural wound-healing cascade to improve texture, pores, and acne scarring.',
     whatItHelps: [
-      'Acne scars',
-      'Fine lines',
-      'Uneven texture',
-      'Large pores',
-      'Overall skin quality',
+      'Acne scars and surgical scars',
+      'Enlarged pores and rough texture',
+      'Fine lines and premature crepiness',
+      'Uneven skin tone and dullness',
     ],
     whoItsFor:
-      'Clients seeking improvement in skin texture, scarring, or overall skin quality through a minimally invasive treatment.',
+      'Safe and clinically proven for all skin types seeking noticeable improvements in skin smoothness, tone, and elasticity with minimal recovery downtime.',
     overview:
-      'SkinPen Microneedling uses fine needles to create controlled micro-channels in the skin, triggering the body\'s natural wound-healing process and stimulating collagen and elastin production.',
-    provider: 'kelli-cossey',
-    concernIds: ['skin-texture'],
+      'SkinPen creates microscopic perforations in the epidermis, stimulating the release of natural growth factors and new collagen synthesis without thermal damage or risk of hyperpigmentation.',
+    provider: 'ericka-blyther',
+    concernIds: ['skin-texture', 'pigmentation'],
     featured: true,
-    image: '/images/skin-texture.jpg',
+    image: '/images/microneedling-treatment.jpg',
   },
   {
     id: 'laser-treatments',
     slug: 'laser-treatments',
-    name: 'BBL & Moxi Laser',
+    name: 'Laser & Light Skin Renewal',
     category: 'Skin Rejuvenation',
-    tagline: 'Advanced light therapy for clearer, more even skin.',
+    tagline: 'Targeted light energy for clarity, tone, and luminous radiance.',
     shortDesc:
-      'BroadBand Light (BBL) and Moxi laser treatments that address pigmentation, sun damage, and skin texture with minimal downtime.',
+      'Advanced medical-grade light and laser treatments designed to clear stubborn sun damage, pigmentation, diffuse redness, and early signs of environmental aging.',
     whatItHelps: [
-      'Sun damage',
-      'Age spots',
-      'Uneven pigmentation',
-      'Skin texture',
-      'Early signs of aging',
+      'Sunspots, freckles, and age spots',
+      'Facial redness and broken capillaries',
+      'Uneven skin tone and pigmentation',
+      'Overall complexion luminosity',
     ],
     whoItsFor:
-      'Clients looking to address pigmentation, sun damage, or overall skin tone improvement.',
+      'Patients ready to eliminate accumulated sun exposure and achieve a clearer, brighter canvas.',
     overview:
-      'BBL uses intense pulsed light to target pigmentation and redness, while Moxi is a gentle fractional laser that improves tone and texture. Both treatments support a clearer, more youthful complexion.',
-    provider: 'kelli-cossey',
+      'Precision wavelengths target melanin deposits and hemoglobin, breaking down excess pigment while stimulating deeper collagen fibers for radiant skin renewal.',
+    provider: 'ericka-blyther',
     concernIds: ['pigmentation', 'skin-texture'],
-    featured: true,
-    image: '/images/skin-texture.jpg',
-  },
-  {
-    id: 'iv-therapy',
-    slug: 'iv-therapy',
-    name: 'IV Therapy',
-    category: 'Wellness',
-    tagline: 'Replenish. Recover. Revitalize.',
-    shortDesc:
-      'Medical-grade IV infusions delivering essential vitamins, minerals, and hydration directly to your system for rapid replenishment and whole-body support.',
-    whatItHelps: [
-      'Low energy',
-      'Dehydration',
-      'Immune support',
-      'Recovery',
-      'Overall wellness',
-    ],
-    whoItsFor:
-      'Clients seeking an efficient boost in hydration, energy, immune support, or recovery.',
-    overview:
-      "IV therapy delivers a customized blend of vitamins and minerals directly into the bloodstream for maximum absorption. KC Wellness offers options including the classic Myer's Cocktail.",
-    provider: 'kelli-cossey',
-    concernIds: ['wellness'],
     featured: false,
-    image: '/images/wellness.jpg',
-  },
-  {
-    id: 'wellness-shots',
-    slug: 'wellness-shots',
-    name: 'Bio-Hacking Shots',
-    category: 'Wellness',
-    tagline: 'Targeted support. Maximum absorption.',
-    shortDesc:
-      'Quick intramuscular injections of NAD+, PolyMVA, B12, and other targeted nutrients for energy, cognitive support, and cellular health.',
-    whatItHelps: [
-      'Energy levels',
-      'Cognitive clarity',
-      'Cellular health',
-      'Inflammation',
-    ],
-    whoItsFor:
-      'Clients interested in targeted nutrient support for energy, focus, and overall cellular wellness.',
-    overview:
-      'Bio-Hacking Shots are quick intramuscular injections that deliver concentrated nutrients directly into the body. Options include NAD+, PolyMVA, and B12 shots.',
-    provider: 'kelli-cossey',
-    concernIds: ['wellness'],
-    featured: false,
-    image: '/images/wellness.jpg',
+    image: '/images/laser-skin-treatment.jpg',
   },
   {
     id: 'weight-loss',
     slug: 'weight-loss',
-    name: 'Metabolic & Weight Support',
+    name: 'Medically Supervised Weight Loss',
     category: 'Wellness',
-    tagline: 'Optimize metabolism. Support natural vitality.',
+    tagline: 'Evidence-based metabolic optimization and body transformation.',
     shortDesc:
-      'Targeted lipotropic MIC injections (Methionine, Inositol, Choline) and customized metabolic infusions designed to support efficient fat metabolism and cellular energy.',
+      'Comprehensive, nurse practitioner-guided weight loss programs combining GLP-1 peptide therapy (Semaglutide / Tirzepatide), Lipo-MICC metabolism injections, and individualized clinical support.',
     whatItHelps: [
-      'Metabolic efficiency',
-      'Fat metabolism support',
-      'Energy & stamina',
-      'Nutrient absorption',
-      'Body composition goals',
+      'Stubborn abdominal and visceral fat',
+      'Metabolic resistance and slow metabolism',
+      'Appetite regulation and cravings',
+      'Sustained physical energy and stamina',
+      'Long-term body composition optimization',
     ],
     whoItsFor:
-      'Clients seeking medically formulated metabolic and lipotropic support alongside nutrition and lifestyle goals.',
+      'Individuals who have hit weight loss plateaus and desire safe, physician-calibrated metabolic intervention with continuous clinical monitoring.',
     overview:
-      'KC Wellness provides targeted lipotropic therapies including MIC Lipo B12 injections and metabolic wellness infusions. Formulated with key lipotropic nutrients—Methionine, Inositol, Choline, and L-Carnitine—these treatments support liver function, cellular energy production, and efficient fat metabolism.',
-    provider: 'kelli-cossey',
+      'Under the guidance of Ericka Blyther, MSN, APRN, our medical weight management protocols address the root biological drivers of weight resistance. We combine FDA-studied peptide therapies with lipotropic injections to optimize liver fat metabolism and preserve lean muscle mass.',
+    provider: 'ericka-blyther',
     concernIds: ['weight-management', 'wellness'],
     featured: true,
+    image: '/images/weight-loss-treatment.jpg',
+  },
+  {
+    id: 'hormone-therapy',
+    slug: 'hormone-therapy',
+    name: 'Bioidentical Hormone Replacement (BHRT)',
+    category: 'Wellness',
+    tagline: 'Restore vitality, mental clarity, and deep biological balance.',
+    shortDesc:
+      'Personalized bioidentical hormone optimization for women and men suffering from fatigue, brain fog, mood fluctuations, poor sleep, and age-related hormonal decline.',
+    whatItHelps: [
+      'Chronic fatigue and midday crashes',
+      'Brain fog and difficulty concentrating',
+      'Sleep disturbances and night sweats',
+      'Unexplained weight gain and muscle loss',
+      'Low libido and mood changes',
+    ],
+    whoItsFor:
+      'Patients seeking to reclaim their energy, sleep quality, and mental clarity through biologically identical hormone balancing backed by comprehensive lab diagnostics.',
+    overview:
+      'Hormone levels shift significantly with age and stress. Ericka Blyther evaluates comprehensive blood biomarker panels to formulate precise, customized bioidentical hormone prescriptions that match your body\'s natural molecular structure.',
+    provider: 'ericka-blyther',
+    concernIds: ['wellness'],
+    featured: true,
+    image: '/images/hrt-treatment.jpg',
+  },
+  {
+    id: 'iv-therapy',
+    slug: 'iv-therapy',
+    name: 'IV Hydration & Vitamin Drips',
+    category: 'Wellness',
+    tagline: 'Direct cellular replenishment. Instant absorption.',
+    shortDesc:
+      'Medical-grade intravenous infusions delivering essential electrolytes, antioxidants, and vitamins directly to your bloodstream for immediate energy and systemic recovery.',
+    whatItHelps: [
+      'Dehydration and physical fatigue',
+      'Immune defense and sickness recovery',
+      'Post-travel or athletic depletion',
+      'Cellular detoxification and skin glow',
+    ],
+    whoItsFor:
+      'Anyone seeking fast, 100% bioavailable nutrient replenishment in our serene Southwick clinical hydration lounge.',
+    overview:
+      'Because intravenous infusions bypass digestion, nutrients reach your cells instantly at therapeutic concentrations. Formulations include the classic Myers\' Cocktail, Be Energized, Immunity, and Glutathione drips.',
+    provider: 'ericka-blyther',
+    concernIds: ['wellness'],
+    featured: true,
+    image: '/images/iv-therapy-treatment.jpg',
+  },
+  {
+    id: 'wellness-shots',
+    slug: 'wellness-shots',
+    name: 'Lipo-MICC & Vitamin Booster Injections',
+    category: 'Wellness',
+    tagline: 'Rapid intramuscular vitality boosters in minutes.',
+    shortDesc:
+      'Targeted booster injections of Lipo-MICC (Methionine, Inositol, Choline), Methyl-B12, Vitamin D3, and NAD+ to ignite metabolism and elevate energy.',
+    whatItHelps: [
+      'Metabolic activation',
+      'Liver fat processing support',
+      'Instant B12 vitality boost',
+      'Immune resilience',
+    ],
+    whoItsFor:
+      'Busy patients looking for a quick, efficient weekly nutrient boost to support active lifestyles and metabolic goals.',
+    overview:
+      'Administered in just 5 minutes, intramuscular nutrient injections bypass digestive breakdown for rapid, reliable uptake.',
+    provider: 'ericka-blyther',
+    concernIds: ['wellness', 'weight-management'],
+    featured: false,
     image: '/images/wellness.jpg',
-  },
-  {
-    id: 'prp',
-    slug: 'prp',
-    name: 'PRP Therapy',
-    category: 'Skin Rejuvenation',
-    tagline: 'Harness your body\'s own healing power.',
-    shortDesc:
-      'Platelet-Rich Plasma therapy uses your own blood\'s growth factors to stimulate tissue regeneration, collagen production, and skin rejuvenation.',
-    whatItHelps: [
-      'Skin rejuvenation',
-      'Hair restoration',
-      'Acne scarring',
-      'Fine lines',
-    ],
-    whoItsFor:
-      'Clients seeking a natural approach to skin rejuvenation using their body\'s own growth factors.',
-    overview:
-      'PRP therapy involves drawing a small amount of blood, processing it to concentrate the platelets and growth factors, and then applying it to the treatment area to stimulate natural healing and regeneration.',
-    provider: 'kelli-cossey',
-    concernIds: ['skin-texture', 'fine-lines'],
-    featured: false,
-    image: '/images/skin-texture.jpg',
-  },
-  {
-    id: 'diamond-glow',
-    slug: 'diamond-glow',
-    name: 'DiamondGlow',
-    category: 'Skin Rejuvenation',
-    tagline: 'Exfoliate. Extract. Infuse.',
-    shortDesc:
-      'A medical-grade skin resurfacing treatment that simultaneously exfoliates, extracts impurities, and infuses targeted serums for immediately radiant skin.',
-    whatItHelps: [
-      'Dull skin',
-      'Congested pores',
-      'Dehydration',
-      'Uneven texture',
-    ],
-    whoItsFor:
-      'Clients seeking immediate skin radiance with no downtime through a medical-grade facial treatment.',
-    overview:
-      'DiamondGlow is a next-level skin resurfacing treatment that goes beyond a standard facial. It uses a patented wand with a diamond tip to exfoliate dead skin, extract debris, and simultaneously infuse customized serums.',
-    provider: 'kelli-cossey',
-    concernIds: ['skin-texture', 'pigmentation'],
-    featured: false,
-    image: '/images/skin-texture.jpg',
   },
 ];
 
@@ -376,13 +375,96 @@ export const treatmentCategories = [
 ];
 
 // ============================================================
+// VERIFIED REAL TESTIMONIALS (FROM OFFICIAL KC WELLNESS MED SPA)
+// Source: https://www.kcwellnessmedicalspa.com/reviews/
+// ============================================================
+
+export const verifiedReviews = [
+  {
+    id: 'sarah-m',
+    patient: 'Sarah M.',
+    treatment: 'IV Hydration Therapy',
+    serviceCategory: 'Wellness',
+    date: 'March 2025',
+    rating: 5,
+    quote:
+      'Absolutely love KC Wellness! Ericka is so knowledgeable and makes you feel completely at ease. My Be Energized drip had me feeling amazing within hours. I\'ve already booked my next appointment!',
+    highlight: 'Feeling amazing within hours',
+    verified: true,
+    location: 'Southwick, MA',
+  },
+  {
+    id: 'jennifer-l',
+    patient: 'Jennifer L.',
+    treatment: 'Botox & Neurotoxins',
+    serviceCategory: 'Injectables',
+    date: 'February 2025',
+    rating: 5,
+    quote:
+      'I was nervous about getting Botox for the first time, but Ericka walked me through everything and made me feel so comfortable. The results are so natural — exactly what I wanted. I couldn\'t be happier!',
+    highlight: 'The results are so natural — exactly what I wanted',
+    verified: true,
+    location: 'Westfield, MA',
+  },
+  {
+    id: 'tanya-b',
+    patient: 'Tanya B.',
+    treatment: 'Dermal Fillers',
+    serviceCategory: 'Injectables',
+    date: 'December 2024',
+    rating: 5,
+    quote:
+      'I came in for lip filler and was blown away by the results. Ericka has such an artistic eye — my lips look full and natural, not overdone at all. The whole experience was premium from start to finish.',
+    highlight: 'Full and natural, not overdone at all',
+    verified: true,
+    location: 'Agawam, MA',
+  },
+  {
+    id: 'michelle-r',
+    patient: 'Michelle R.',
+    treatment: 'Medical Weight Loss',
+    serviceCategory: 'Wellness',
+    date: 'February 2025',
+    rating: 5,
+    quote:
+      'I had struggled for so long to lose stubborn weight, but the personalized plan and Lipo MICC protocol at KC Wellness was truly life-changing. 18 lbs down in 10 weeks and feeling healthier than ever.',
+    highlight: '18 lbs down in 10 weeks and feeling healthier than ever',
+    verified: true,
+    location: 'Southwick, MA',
+  },
+  {
+    id: 'amanda-k',
+    patient: 'Amanda K.',
+    treatment: 'Hormone Replacement Therapy',
+    serviceCategory: 'Wellness',
+    date: 'January 2025',
+    rating: 5,
+    quote:
+      'I struggled for years with fatigue, severe brain fog, and unexpected weight gain. After starting customized HRT with Ericka, I feel like a completely different person. My energy is back and I finally sleep soundly.',
+    highlight: 'I feel like a completely different person',
+    verified: true,
+    location: 'Simsbury, CT',
+  },
+  {
+    id: 'danielle-t',
+    patient: 'Danielle T.',
+    treatment: 'SkinPen Microneedling',
+    serviceCategory: 'Skin Rejuvenation',
+    date: 'January 2025',
+    rating: 5,
+    quote:
+      'After three microneedling sessions, my stubborn acne scars are fading, pores look dramatically smaller, and my skin genuinely glows without makeup.',
+    highlight: 'My skin genuinely glows without makeup',
+    verified: true,
+    location: 'Springfield, MA',
+  },
+];
+
+// ============================================================
 // RESULTS / PROOF — Smart Proof System
 // ============================================================
 
 export const results = [
-  // State B — Decision-Support & Expectation Guides
-  // Active when clinical photography is pending patient consent.
-  // Replaces empty "Coming Soon" tiles with actionable clinical timelines.
   {
     id: 'botox-result',
     treatmentId: 'botox-dysport',
@@ -390,9 +472,9 @@ export const results = [
     hasApprovedPhotos: false,
     whatClientsAddress: ['Expression lines', 'Forehead creases', "Crow's feet", 'Frown lines (11s)'],
     whatToExpect:
-      'Most clients notice softening of expression lines within 3–7 days, with full results visible at 2 weeks. Results typically last 3–4 months. Touch-ups help maintain a consistently refreshed appearance.',
+      'Most clients notice initial softening of dynamic expression lines within 3–7 days, with full artistic results settling at 14 days. Results typically maintain smooth relaxation for 3–4 months.',
     clinicalInsight:
-      'Conservative micro-dosing preserves full natural expression while preventing crease deepening.',
+      'Conservative micro-dosing by Ericka Blyther preserves full natural expression while preventing crease deepening.',
     category: 'Injectables',
   },
   {
@@ -400,9 +482,9 @@ export const results = [
     treatmentId: 'fillers',
     treatmentName: 'Dermal Fillers',
     hasApprovedPhotos: false,
-    whatClientsAddress: ['Lip volume', 'Cheek contour', 'Under-eye hollows', 'Nasolabial folds'],
+    whatClientsAddress: ['Lip volume & border', 'Cheek contour', 'Under-eye hollows', 'Nasolabial folds'],
     whatToExpect:
-      'Results are visible immediately after treatment, with final results at 2 weeks once any initial swelling subsides. Most hyaluronic acid fillers last 6–18 months depending on the area and product used.',
+      'Results are visible immediately, with final tissue integration completed at 2 weeks once micro-swelling subsides. High-quality hyaluronic acid fillers maintain balanced volume for 9–18 months.',
     clinicalInsight:
       'Layered micro-droplet placement restores structural harmony without overfilling or unnatural projection.',
     category: 'Injectables',
@@ -414,7 +496,7 @@ export const results = [
     hasApprovedPhotos: false,
     whatClientsAddress: ['Acne scarring', 'Uneven texture', 'Fine lines', 'Pore size'],
     whatToExpect:
-      'Skin may appear pink for 24–72 hours post-treatment. Visible improvements in texture and tone typically emerge within 2–4 weeks, with progressive collagen remodeling continuing for up to 6 months.',
+      'Skin exhibits mild erythema (sunburn-like pinkness) for 24–48 hours post-treatment. Visible textural refinement typically emerges within 2–4 weeks, with progressive collagen remodeling continuing for up to 6 months.',
     clinicalInsight:
       'Mechanical micro-injury stimulates natural physiological healing cascades without heat-induced pigmentation risk.',
     category: 'Skin Rejuvenation',
@@ -422,11 +504,11 @@ export const results = [
   {
     id: 'laser-result',
     treatmentId: 'laser-treatments',
-    treatmentName: 'BBL & Moxi Laser',
+    treatmentName: 'Laser & Light Skin Renewal',
     hasApprovedPhotos: false,
-    whatClientsAddress: ['Sun damage', 'Age spots', 'Uneven tone', 'Texture'],
+    whatClientsAddress: ['Sun damage', 'Age spots', 'Uneven tone', 'Facial redness'],
     whatToExpect:
-      'Treated areas may appear slightly flushed for 1–3 days. Dark spots may temporarily darken ("coffee-grounding") before naturally sloughing away in 5–7 days, revealing brighter, clearer skin.',
+      'Treated areas may appear slightly flushed for 1–2 days. Superficial pigment particles darken temporarily before naturally sloughing away in 5–7 days, revealing visibly brighter skin.',
     clinicalInsight:
       'Dual-depth light energy targets superficial melanin clusters and stimulates deep dermal elasticity simultaneously.',
     category: 'Skin Rejuvenation',
@@ -434,42 +516,38 @@ export const results = [
   {
     id: 'weight-result',
     treatmentId: 'weight-loss',
-    treatmentName: 'Metabolic & Weight Support',
+    treatmentName: 'Medically Supervised Weight Loss',
     hasApprovedPhotos: false,
-    whatClientsAddress: ['Fat metabolism', 'Energy levels', 'Metabolic efficiency', 'Body composition'],
+    whatClientsAddress: ['Metabolic resistance', 'Visceral fat', 'Appetite regulation', 'Sustained energy'],
     whatToExpect:
-      'Clients begin with a dedicated consultation and weekly MIC Lipo injections or targeted metabolic infusions. Most report increased physical stamina and sustained energy within 1–2 weeks.',
+      'Patients begin with an in-depth clinical consultation and weekly GLP-1 or Lipo-MICC protocols. Patients commonly observe reduced cravings within days and steady body composition improvements over 8–16 weeks.',
     clinicalInsight:
       'Lipotropic compounds (Methionine, Inositol, Choline) and Methyl-B12 act as biological catalysts to support liver lipid transport.',
-    category: 'Body & Weight',
+    category: 'Wellness',
+  },
+  {
+    id: 'hrt-result',
+    treatmentId: 'hormone-therapy',
+    treatmentName: 'Bioidentical Hormone Replacement (BHRT)',
+    hasApprovedPhotos: false,
+    whatClientsAddress: ['Chronic fatigue', 'Brain fog', 'Night sweats', 'Hormonal weight changes'],
+    whatToExpect:
+      'Following comprehensive lab testing and personalized BHRT prescription, patients report improved sleep quality and mood within 2–3 weeks, with sustained energy and mental clarity compounding over 2–3 months.',
+    clinicalInsight:
+      'Precise bioidentical calibration restores cellular receptor sensitivity to youthful physiological levels.',
+    category: 'Wellness',
   },
   {
     id: 'iv-result',
     treatmentId: 'iv-therapy',
-    treatmentName: 'IV Therapy',
+    treatmentName: 'IV Hydration & Vitamin Therapy',
     hasApprovedPhotos: false,
-    whatClientsAddress: ['Low energy', 'Dehydration', 'Immune support', 'Recovery'],
+    whatClientsAddress: ['Cellular dehydration', 'Chronic fatigue', 'Immune depletion', 'Post-stress recovery'],
     whatToExpect:
-      'Many clients feel increased energy and hydration within hours of treatment. Sessions typically last 30–60 minutes. Regular treatments can support sustained vitality and wellness.',
+      'Clients feel immediate hydration and sustained energy within 2–4 hours of treatment. 45-minute lounge appointments provide a peaceful retreat with lasting whole-body vitality.',
     clinicalInsight:
       'Direct intravenous delivery bypasses GI tract degradation for 100% cellular bioavailability of micronutrients.',
     category: 'Wellness',
-  },
-  // State A Demonstration — Shows how approved clinical results render when patient photography consent is available
-  {
-    id: 'demo-state-a-clinical',
-    treatmentId: 'botox-dysport',
-    treatmentName: 'Botox & Dysport (State A Clinical Case)',
-    hasApprovedPhotos: true,
-    isSampleDemo: true,
-    timeline: '14 Days Post-Treatment',
-    providerName: 'Kelli Cossey, RN, BSN',
-    whatClientsAddress: ['Glabellar frown lines', 'Forehead smoothing', 'Natural movement'],
-    whatToExpect:
-      'Sample clinical documentation illustrating natural mobility retention with complete softening of resting lines.',
-    clinicalInsight:
-      'State A Architecture: Activates when clinical photography is approved. Replaces generic stock photos with verified before & after clinical comparison.',
-    category: 'Injectables',
   },
 ];
 
@@ -477,6 +555,5 @@ export const resultCategories = [
   'All',
   'Injectables',
   'Skin Rejuvenation',
-  'Body & Weight',
   'Wellness',
 ];

@@ -8,24 +8,24 @@ export default function TrustStrip() {
       <div className="container">
         <div className="trust-strip-inner animate-in">
           <div className="trust-strip-item">
-            <span className="trust-strip-icon">◆</span>
-            Licensed Medical Provider
+            <span className="trust-strip-icon">✦</span>
+            <span>Nurse Practitioner Led</span>
           </div>
           <div className="trust-strip-item">
-            <span className="trust-strip-icon">◆</span>
-            RN, BSN Certified
+            <span className="trust-strip-icon">✦</span>
+            <span>Ericka Blyther, MSN, APRN</span>
           </div>
           <div className="trust-strip-item">
-            <span className="trust-strip-icon">◆</span>
-            Natural Results Philosophy
+            <span className="trust-strip-icon">✦</span>
+            <span>Natural "Less Is More" Philosophy</span>
           </div>
           <div className="trust-strip-item">
-            <span className="trust-strip-icon">◆</span>
-            Complimentary Consultations
+            <span className="trust-strip-icon">✦</span>
+            <span>Complimentary Consultations</span>
           </div>
           <div className="trust-strip-item">
-            <span className="trust-strip-icon">◆</span>
-            Oklahoma City, OK
+            <span className="trust-strip-icon">✦</span>
+            <span>Southwick, Massachusetts</span>
           </div>
         </div>
       </div>

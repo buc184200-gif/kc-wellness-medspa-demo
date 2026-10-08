@@ -60,6 +60,26 @@ export default function FindTreatmentModal({ onClose }) {
             </button>
           ))}
         </div>
+
+        <div style={{ textAlign: 'center', marginTop: '1.25rem' }}>
+          <button
+            onClick={() => {
+              onClose();
+              navigate('/treatment-matcher');
+            }}
+            style={{
+              background: 'none',
+              border: 'none',
+              color: 'var(--color-navy)',
+              fontSize: '0.82rem',
+              fontWeight: 600,
+              textDecoration: 'underline',
+              cursor: 'pointer',
+            }}
+          >
+            Launch Full Interactive Matcher Page →
+          </button>
+        </div>
       </div>
     </div>
   );
